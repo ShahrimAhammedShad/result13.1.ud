@@ -487,13 +487,13 @@ function renderStudentPortal(roll) {
         <h2>${escapeHtml(latest.examName)}</h2>
         <p>${formatDate(latest.examDate)} | ${escapeHtml(student.name)} | Roll ${escapeHtml(student.roll)}</p>
       </div>
-      <div class="score-display"><span>GPA</span><b>${latest.gpa.toFixed(2)}</b></div>
+      <div class="score-display"><span>Marks</span><b>${latest.obtained}/${latest.fullMarks}</b></div>
     </div>
     <div class="metric-grid">
-      ${metric("Marks", `${latest.obtained}/${latest.fullMarks}`)}
-      ${metric("Percentage", `${latest.percentage.toFixed(2)}%`)}
-      ${metric("Grade", latest.grade)}
       ${metric("Merit Position", ordinal(latest.examMerit))}
+      ${metric("GPA", latest.gpa.toFixed(2))}
+      ${metric("Grade", latest.grade)}
+      ${metric("Percentage", `${latest.percentage.toFixed(2)}%`)}
     </div>
   `;
 
